@@ -79,6 +79,4 @@ Built with 💻 by **\[Your Name]**
 ---
 
 ```
-
-Let me know if you’d like this in downloadable PDF format or if you'd like a version that includes shields.io badges (like “Deployed on Vercel”, “React”, etc.) for GitHub display.
 ```
