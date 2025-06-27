@@ -1,5 +1,4 @@
 
-
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Layout from "../components/Layout";
@@ -23,6 +22,10 @@ export default function Appointments() {
           <table className="w-full border text-sm text-gray-700">
             <thead className="bg-blue-50">
               <tr className="text-left">
+                <th className="p-2 border">Patient</th>
+                <th className="p-2 border">Age</th>
+                <th className="p-2 border">Gender</th>
+                <th className="p-2 border">Mobile</th>
                 <th className="p-2 border">Doctor</th>
                 <th className="p-2 border">Date & Time</th>
                 <th className="p-2 border">Fee</th>
@@ -32,6 +35,10 @@ export default function Appointments() {
             <tbody>
               {appointments.map((a) => (
                 <tr key={a._id} className={`border-b ${a.status === "failed" ? "bg-red-50" : ""}`}>
+                  <td className="p-2 border">{a.patientName || "N/A"}</td>
+                  <td className="p-2 border">{a.age || "-"}</td>
+                  <td className="p-2 border">{a.gender || "-"}</td>
+                  <td className="p-2 border">{a.userName || "-"}</td>
                   <td className="p-2 border">{a.doctor || "N/A"}</td>
                   <td className="p-2 border">{a.time ? new Date(a.time).toLocaleString() : "N/A"}</td>
                   <td className="p-2 border">₹{a.amount}</td>
@@ -48,7 +55,6 @@ export default function Appointments() {
               ))}
             </tbody>
           </table>
-
           {appointments.length === 0 && (
             <p className="text-center text-gray-500 mt-4">No appointments yet.</p>
           )}
@@ -57,4 +63,3 @@ export default function Appointments() {
     </>
   );
 }
-

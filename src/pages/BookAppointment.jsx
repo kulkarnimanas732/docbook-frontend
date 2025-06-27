@@ -20,7 +20,6 @@ export default function BookAppointment() {
   };
 
   const handlePayment = async () => {
-    // ✅ Frontend-only validation
     if (!patientName || !age || !gender || !doctor || !appointmentTime || !mobile) {
       return toast.error("Please fill all fields before proceeding.");
     }
@@ -50,7 +49,6 @@ export default function BookAppointment() {
               mobile,
               doctor,
               time: appointmentTime,
-              // ⚠️ Not saved to DB, but available in local/frontend
               patientName,
               age,
               gender,
@@ -74,7 +72,6 @@ export default function BookAppointment() {
 
       const rzp = new window.Razorpay(options);
 
-      // Razorpay failure handling
       rzp.on("payment.failed", async (response) => {
         toast.error("❌ Payment Failed");
 
@@ -87,16 +84,18 @@ export default function BookAppointment() {
             mobile,
             doctor,
             time: appointmentTime,
+            patientName,
+            age,
+            gender,
           });
           navigate("/appointments");
-        } catch (err) {
-          console.error("Failed to log failed payment:", err);
+        } catch {
           navigate("/appointments");
         }
       });
 
       rzp.open();
-    } catch (err) {
+    } catch {
       toast.error("Payment initiation failed");
     }
   };
@@ -107,7 +106,6 @@ export default function BookAppointment() {
       <Layout>
         <div className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
           <h1 className="text-3xl font-semibold text-gray-800 mb-6">Book a Doctor Appointment</h1>
-
           <div className="space-y-4 mb-8">
             <input
               type="text"
@@ -116,7 +114,6 @@ export default function BookAppointment() {
               placeholder="Enter patient's full name"
               className="w-full px-4 py-2 border rounded-lg"
             />
-
             <input
               type="number"
               value={age}
@@ -124,7 +121,6 @@ export default function BookAppointment() {
               placeholder="Enter age"
               className="w-full px-4 py-2 border rounded-lg"
             />
-
             <select
               value={gender}
               onChange={(e) => setGender(e.target.value)}
@@ -135,7 +131,6 @@ export default function BookAppointment() {
               <option value="Female">Female</option>
               <option value="Other">Other</option>
             </select>
-
             <select
               value={doctor}
               onChange={(e) => setDoctor(e.target.value)}
@@ -145,14 +140,12 @@ export default function BookAppointment() {
               <option value="Dr. A">Dr. A – Cardiologist – ₹500</option>
               <option value="Dr. B">Dr. B – Dermatologist – ₹400</option>
             </select>
-
             <input
               type="datetime-local"
               value={appointmentTime}
               onChange={(e) => setAppointmentTime(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg"
             />
-
             <input
               type="tel"
               value={mobile}
@@ -160,7 +153,6 @@ export default function BookAppointment() {
               placeholder="Enter mobile number"
               className="w-full px-4 py-2 border rounded-lg"
             />
-
             <button
               onClick={handlePayment}
               className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition"
@@ -173,3 +165,4 @@ export default function BookAppointment() {
     </>
   );
 }
+
