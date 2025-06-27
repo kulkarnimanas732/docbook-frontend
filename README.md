@@ -1,70 +1,84 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+````markdown
+# 🩺 DocBook – Frontend
 
-In the project directory, you can run:
+A modern, responsive frontend for **DocBook** – a full-stack doctor appointment booking app with integrated Razorpay payments.
 
-### `npm start`
+## 🚀 Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🔗 [Live Site](https://your-vercel-url.com)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **React.js** – Component-based UI
+- **Tailwind CSS** – Utility-first styling
+- **React Router** – Client-side routing
+- **Axios** – API requests
+- **React Hook Form + Yup** – Form handling and validation
+- **Razorpay** – Payment integration (test mode)
+- **Vercel** – Hosting
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔑 Features
 
-### `npm run build`
+- 🔐 User Sign-up & Login
+- 📋 Appointment Booking Form
+- 💳 Razorpay Test Payment Integration
+- 📊 View Appointments with Success/Failure Status
+- 🌙 Optional: Dark Mode Toggle
+- 📱 Mobile-Responsive UI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔧 Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/kulkarnimanas732/docbook-frontend.git
+cd docbook-frontend
+````
 
-### `npm run eject`
+### 2. Install dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. Run the app locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 4. Setup environment variables
 
-## Learn More
+Create a `.env` file in the project root:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```env
+REACT_APP_BACKEND_URL=https://your-backend-url.com
+REACT_APP_RAZORPAY_KEY=your_razorpay_key
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🗂️ Project Structure
 
-### Code Splitting
+```
+src/
+├── components/         # Reusable components
+├── pages/              # Page-level components
+├── utils/           # API calls (Axios)
+├── App.jsx             # Main app entry
+           
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 📫 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Built with 💻 by **\[Your Name]**
+📧 \manaskulkarni12345@gmail.com
+🔗 \https://www.linkedin.com/in/manaskulkarni12345
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Let me know if you’d like this in downloadable PDF format or if you'd like a version that includes shields.io badges (like “Deployed on Vercel”, “React”, etc.) for GitHub display.
+```
